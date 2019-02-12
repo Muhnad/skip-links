@@ -1,7 +1,11 @@
 {
-  "name": "react-skip-links",
-  "version": "1.0.0",
-  "description": "react-skip-links React component",
+  "name": "skip-links",
+  "version": "0.0.8",
+  "description": "Skip links component for react.",
+  "author": {
+    "name": "Muhannad Abdelrazek",
+    "email": "muhnad.abdelrazek@gmail.com"
+  },
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": [
@@ -10,29 +14,53 @@
     "lib",
     "umd"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Muhnad/skip-links.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Muhnad/skip-links/issues"
+  },
+  "keywords": [
+    "a11y",
+    "accessibility",
+    "skip links",
+    "skip navigation",
+    "skip to main content",
+    "react component"
+  ],
   "scripts": {
+    "start": "nwb serve-react-demo",
     "build": "nwb build-react-component",
     "clean": "nwb clean-module && nwb clean-demo",
-    "prepublishOnly": "npm run build",
-    "start": "nwb serve-react-demo",
     "test": "nwb test-react",
-    "test:coverage": "nwb test-react --coverage",
-    "test:watch": "nwb test-react --server"
+    "prepublishOnly": "npm run build"
   },
-  "dependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm test"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "prop-types": "^15.6.2"
+  },
   "peerDependencies": {
     "react": "16.x"
   },
   "devDependencies": {
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.3",
     "nwb": "0.23.x",
+    "prettier": "1.16.4",
     "react": "^16.8.1",
     "react-dom": "^16.8.1"
   },
-  "author": "",
-  "homepage": "",
-  "license": "MIT",
-  "repository": "",
-  "keywords": [
-    "react-component"
-  ]
+  "license": "MIT"
 }
