@@ -1,6 +1,6 @@
 {
   "name": "skip-links",
-  "version": "0.0.8",
+  "version": "1.0.0",
   "description": "Skip links component for react.",
   "author": {
     "name": "Muhannad Abdelrazek",
@@ -31,7 +31,7 @@
   ],
   "scripts": {
     "start": "nwb serve-react-demo",
-    "build": "nwb build-react-component",
+    "build": "nwb build-react-component --copy-files",
     "clean": "nwb clean-module && nwb clean-demo",
     "test": "nwb test-react",
     "prepublishOnly": "npm run build"
