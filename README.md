@@ -68,7 +68,7 @@ To begin contributing, you'll first need to
 then navigate into the repository's directory.
 
 ```
-git clone git@github.com:Muhnad/skip-links.git
+git clone git@github.com:{{ YOUR_USERNAME }}/skip-links.git
 
 cd skip-links
 ```
