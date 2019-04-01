@@ -2,25 +2,26 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./index.css";
 
-const SkipLinks = ({ links, ...restProps }) => {
+const LinkItem = ({ to, title, ...restProps }) => (
+  <li>
+    <a href={`#${to}`} className="c-links__item" {...restProps}>
+      {title}
+    </a>
+  </li>
+);
+
+const SkipLinks = ({ links }) => {
   const hasLinks = links && links.length;
 
   if (hasLinks) {
     return (
       <section>
         <div className="c-links">
-          <h2 className="vs-hidden">Accessibility links</h2>
+          <h2 className="u-vs-hidden">Accessibility links</h2>
+
           <ul>
             {links.map(link => (
-              <li key={link.title}>
-                <a
-                  href={`#${link.to}`}
-                  className="c-links__item"
-                  {...restProps}
-                >
-                  {link.title}
-                </a>
-              </li>
+              <LinkItem key={link.title} {...link} />
             ))}
           </ul>
         </div>
@@ -32,7 +33,12 @@ const SkipLinks = ({ links, ...restProps }) => {
 };
 
 SkipLinks.propTypes = {
-  links: PropTypes.array.isRequired
+  links: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      to: PropTypes.string.isRequired
+    })
+  ).isRequired
 };
 
 export default SkipLinks;
