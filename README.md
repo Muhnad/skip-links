@@ -49,9 +49,12 @@ Shape of array:
 
 ## Q&A
 - How to customize the skip links?
-  1. you can pass style attribute directly to component example:
+  1. you can pass style attribute directly to your object:
+  ```js
+  const links = [{ title: 'Skip Navigation', to: 'main', style: { backgroundColor: 'red' } }]
+  ```
   ```html
-    <SkipLinks links={links} style={{backgroundColor: 'red', ...}}/>
+    <SkipLinks links={links}/>
   ```
   2. you can override the class `.c-links__item`
 

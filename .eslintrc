@@ -1,0 +1,42 @@
+{
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2016,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "jsx": true
+    }
+  },
+  "extends": [
+    "eslint:recommended",
+    "prettier",
+    "prettier/react",
+    "xo-react/space",
+    "xo-space/esnext"
+  ],
+  "plugins": [
+    "react",
+    "react-hooks"
+  ],
+  "rules": {
+    "react/forbid-component-props": 0,
+    "react/jsx-closing-tag-location": 0,
+    "react/jsx-closing-bracket-location": 0,
+    "react/jsx-first-prop-new-line": 0,
+    "react/jsx-handler-names": 0,
+    "react/jsx-fragments": [2, "element"],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "object-curly-spacing": ["error", "always"],
+    "curly": [
+      "error",
+      "multi-line",
+      "consistent"
+    ]
+  }
+}
