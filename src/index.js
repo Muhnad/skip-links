@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import "./index.css";
+import React from 'react';
+import PropTypes from 'prop-types';
+import './index.css';
 
 const LinkItem = ({ to, title, ...restProps }) => (
   <li>
@@ -9,6 +9,11 @@ const LinkItem = ({ to, title, ...restProps }) => (
     </a>
   </li>
 );
+
+LinkItem.propTypes = {
+  title: PropTypes.string.isRequired,
+  to: PropTypes.string.isRequired
+};
 
 const SkipLinks = ({ links }) => {
   const hasLinks = links && links.length;
@@ -20,16 +25,16 @@ const SkipLinks = ({ links }) => {
           <h2 className="u-vs-hidden">Accessibility links</h2>
 
           <ul>
-            {links.map(link => (
-              <LinkItem key={link.title} {...link} />
-            ))}
+            {
+              links.map(link => <LinkItem key={link.title} {...link}/>)
+            }
           </ul>
         </div>
       </section>
     );
-  } else {
-    return null;
   }
+
+  return null;
 };
 
 SkipLinks.propTypes = {
