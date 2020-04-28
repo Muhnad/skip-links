@@ -7,8 +7,8 @@
 }
 
 .c-links__item {
-  position: fixed;
-  top: -3em;
+  position: absolute;
+  top: -200em;
   padding: 0.5em;
   text-decoration: none;
   background-color: #000;
