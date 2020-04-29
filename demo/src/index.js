@@ -17,7 +17,7 @@ const Demo = () => {
       <main id="main" style={{ height: '100vh' }} tabIndex="-1">
         <a href="#hi">Hi Again</a>
       </main>
-      <footer id="footer" style={{ height: '50vh' }}>
+      <footer id="footer" style={{ height: '50vh' }} tabIndex="-1">
         <a href="#bye">Bye</a>
       </footer>
     </Fragment>
